@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "name": "assinter-web",
+  "private": true,
+  "engines": {
+    "node": ">=18.15.0",
+    "npm": ">=9.5.0"
+  },
+  "scripts": {
+    "build:dev": "webpack --config webpack.dev.js",
+    "build:prod": "webpack --config webpack.prod.js",
+    "build:serve": "webpack serve --config webpack.dev.js",
+    "watch": "npm run build:dev -- --watch",
+    "lint": "eslint ./Content/js/**",
+    "clean": "del-cli ./Content/dist/**"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "4.0.31",
+    "animate.css": "4.1.1",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "1.10.3",
+    "clipboard": "2.0.11",
+    "imagesloaded": "4.1.4",
+    "jquery": "3.6.1",
+    "jquery-form": "^4.3.0",
+    "masonry-layout": "4.2.2",
+    "mmenu-js": "9.3.0",
+    "sharer.js": "^0.4.1",
+    "swiper": "6.7.5",
+    "vanilla-cookieconsent": "2.8.8"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "del": "^7.0.0",
+    "del-cli": "^5.0.0",
+    "esbuild-loader": "^3.0.1",
+    "eslint": "^8.36.0",
+    "eslint-webpack-plugin": "^4.0.0",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "html-webpack-harddisk-plugin": "^2.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss": "^8.4.21",
+    "postcss-loader": "^7.1.0",
+    "postcss-preset-env": "^8.0.1",
+    "rimraf": "^4.4.1",
+    "sass": "^1.59.3",
+    "sass-embedded": "^1.59.3",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-middleware": "^6.0.1",
+    "webpack-dev-server": "^4.13.1",
+    "webpack-hot-middleware": "^2.25.3",
+    "webpack-merge": "^5.8.0",
+    "webpack-stats-plugin": "^1.1.1"
+  }
+}
