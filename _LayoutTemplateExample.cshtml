@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    @RenderSection("HtmlHead", required: false)
+    @Html.CanonicalUrlMetaOrHttpHeader()
+    ...
+    ...
+
+    @* html-webpack-plugin styles injection point (using ejs template syntax) *@
+    <% for (var styleFile in htmlWebpackPlugin.files.css) { %>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[styleFile] %>" />
+    <% } %>
+
+    @RenderSection("Styles", required: false)
+    @Html.Partial("_AnalyticsPartial")
+</head>
+<body>
+    ...
+    ...
+
+    @* html-webpack-plugin scripts injection point (using ejs template syntax) *@
+    <% for (var jsFile in htmlWebpackPlugin.files.js) { %>
+    <script src="<%= htmlWebpackPlugin.files.js[jsFile] %>"></script>
+    <% } %>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>
