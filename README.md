@@ -1,6 +1,3 @@
-# webpack-dotnet-kapu
-Bare bones project for dotnet and webpack hybrib setup
-
 # Setup Project  🚧
 
 ## __Prerequisites__:
@@ -11,18 +8,29 @@ Bare bones project for dotnet and webpack hybrib setup
 
 ## __Visual Studio configuration__:
 
-- Su VS, dal menu aprite __Extensions > Menage Extensions__, cercate il pacchetto __NPM task runner__ e installatelo e fate lo stesso con __Markdown Editor v2__ (è necessario chiudere VS ed eventualmente cliccare su "end process" se compare l'alert).
-- Finita l’installazione delle estensioni riaprite VS
-- Dal menu aprite __tools > options__ cercate npm e settate le location in modo che la prima sia PATH (è quella settata da NVM) e che la vecchia dipendenza da Node 8.15 sia disattivata (unchecked)
+- Su VS, dal menu aprite __tools > options__ cercate npm e settate le location in modo che la prima sia PATH (è quella settata da NVM) e che la vecchia dipendenza da Node 8.15 sia disattivata (unchecked)
+- Sempre su VS, dal menu aprite __Extensions > Menage Extensions__, cercate il pacchetto __NPM task runner__ e installatelo e fate lo stesso con __Markdown Editor v2__ (è necessario chiudere VS ed eventualmente cliccare su "end process" se compare l'alert).
+- Finita l’installazione delle estensioni riaprite VS. A questo punto, nel Task Runner Explorer dovreste vedere i task specificati nel file package.json, se non li vedete cliccate con il destro sul file package.json e selezionate: __Task Runner Explorer__
 
 ## __Install node packages__:
-- Da windows file explorer __eliminate__ la cartella _node_modules_ e il file _package-lock.json_ se li avete
+- Da windows file explorer __eliminate__ la cartella _node_modules_ e il file _package-lock.json_, se li avete
 - Click destro sul file package.json e selezionare Restore packages ed attendere la fine del processo di installazione
-A questo punto, nel Task Runner Explorer dovreste vedere i task specificati nel file package.json, se non li vedete cliccate con il destro sul file package.json e selezionate: __Task Runner Explorer__
 
 ## __Final steps__:
 - Mettete in chekcout il file: `./Views/Shared/_Layout.cshtml` 👈
-- Fare una copia del file Views/Shared/___Layout.cshtml__ e rinominarla ___LayoutTemplate.cshtml__ ed inserire i seguenti snippet in head per il css e body per il js
+- Fare una copia del file Views/Shared/___Layout.cshtml__ e rinominarla ___LayoutTemplate.cshtml__ ed inserire i seguenti snippet in head per il css e body per il js (sono snippet di [ejs](https://ejs.co/) usati da webpack):
+
+```js
+<% for (var styleFile in htmlWebpackPlugin.files.css) { %>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[styleFile] %>" />
+<% } %>
+```
+
+```js
+<% for (var jsFile in htmlWebpackPlugin.files.js) { %>
+    <script src="<%= htmlWebpackPlugin.files.js[jsFile] %>"></script>
+<% } %>
+```
 
 &nbsp;
 
