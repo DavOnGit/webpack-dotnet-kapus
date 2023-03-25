@@ -4,7 +4,7 @@
 
 - __Node e npm__ installati con versione __maggiore o uguale__ a quella indicata nel __package.json/engines__ (si puo installare ed utilizzare nvm per windows, nota: per installare nuova versione node va eseguito da powershell con privilegi di amministratore)
 - __Chocolately__ (un gestore di pacchetti, tipo npm ma per Windows). [Link per l'installazione](https://chocolatey.org/install)
-- __Dart-sdk__ con il comando choco install dart-sdk  da powershell con permessi di amministratore; digitare `yes` ad ogni richiesta di installazione di altri script fino a conclusione del processo
+- __Dart-sdk__ con il comando `choco install dart-sdk`  da powershell con permessi di amministratore; digitare `yes` ad ogni richiesta di installazione di altri script fino a conclusione del processo
 
 ## __Visual Studio configuration__:
 
