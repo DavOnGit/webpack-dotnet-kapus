@@ -46,7 +46,7 @@
 - `clean`: Elimina la cartella `./Content/dist` (non è necessario farlo manualmente webpack lo fa già prima di ogni `build` task)
 
 ### Other tasks:
-- `watch`: come build:dev ma in più ricompila on save (non consigliato: usa `build:serve`)
+- `watch`: come _build:serve_ ma on save il browser fa full page refresh, no hot reload (non consigliato: usa `build:serve`)
 
 &nbsp;
 ------
