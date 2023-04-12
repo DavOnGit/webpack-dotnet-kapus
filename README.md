@@ -18,7 +18,7 @@
 
 ## __Final steps__:
 - Mettete in chekcout il file: `./Views/Shared/_Layout.cshtml` 👈
-- Fare una copia del file Views/Shared/___Layout.cshtml__ e rinominarla ___LayoutTemplate.cshtml__ ed inserire i seguenti snippet in head per il css e body per il js (sono snippet di [ejs](https://ejs.co/) usati da webpack): [example file here](https://github.com/DavOnGit/webpack-dotnet-kapus/blob/main/_LayoutTemplateExample.cshtml)
+- Fare una copia del file Views/Shared/___Layout.cshtml__ e rinominarla ___LayoutTemplate.cshtml__ ed inserire i seguenti snippet in head per il css e body per il js (sono snippet di [ejs](https://ejs.co/) usati da webpack) e rimuovere i vecchi link e script (se presenti): [example file here](https://github.com/DavOnGit/webpack-dotnet-kapus/blob/main/_LayoutTemplateExample.cshtml)
 
 ```js
 <% for (var styleFile in htmlWebpackPlugin.files.css) { %>
